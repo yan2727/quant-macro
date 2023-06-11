@@ -46,12 +46,13 @@ jpytilde = jpy-tauJPGDP;
 kodates = 2000:1/4:2022.1/4; zerovec = zeros(size(koy));
 jpdates = 2000:1/4:2022.1/4; zerovec = zeros(size(jpy));
 figure
-title('Detrended log(real GDP) 2000Q1-2022Q4'); hold on
+title('Detrended log(real GDP)Japan,Korea 2000Q1-2022Q4'); hold on
 plot(koq, koytilde,'b')
 plot(jpq, jpytilde,'r')
 datetick('x', 'yyyy-qq')
-
-legend
+xlabel('Time')
+yline(0);
+legend({'koq','jpq'},'location','southeast')
 
 % compute sd(y), sd(c), rho(y), rho(c), corr(y,c) (from detrended series)
 koysd = std(koytilde)*100;
